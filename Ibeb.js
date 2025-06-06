@@ -1,3 +1,5 @@
+cfg.Light, cfg.Portrait, cfg.MUI, cfg.Share;
+
 app.LoadPlugin( "Utils" );
 //Load external scripts.
 app.Script( "Home.js" );
@@ -14,8 +16,9 @@ var curPage = null;
 function OnStart()
 {    
 		utils = app.CreateUtils();
-    //Lock screen orientation to Portrait.
-    app.SetOrientation( "Portrait" );
+		colorTemp =  utils.RandomHexColor();
+    utils.SetTheme("#9522D2");//
+    //utils.RandomHexColor());
     
     //Create and set a 'material style' theme.
     CreateTheme();
@@ -114,6 +117,8 @@ function OnMenu( name )
 //(Re-size/adjust controls here if required)
 function app_OnShowKeyBoard( shown )
 {
+alert(shown);
+alert(app.GetKeyboardHeight());
 }
 
 //Create a theme for all controls and dialogs.

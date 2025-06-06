@@ -77,8 +77,8 @@ function File( path, layContent )
     {
         app.MakeFolder( path+"/"+name+"/Img" );
         var imageFile = path+"/"+name+"/Img/"+name+".png";
-        app.GetThumbnail( file, imageFile, 340, 340 );
-        img.SetImage( imageFile, 0.2,-1 );
+        app.CopyFile(file, imageFile );
+        img.SetImage( imageFile, 0.42,-1 );
         img.imageFile = imageFile;
         btnSave.SetEnabled( true );
     }
@@ -95,8 +95,9 @@ function File( path, layContent )
     layContent.AddChild( lay );
     
     //Create image label.
-    var lab = app.CreateText( "Image" ); 
-    lab.SetTextColor( "#4285F4" );
+    var lab = app.CreateText( "Image:", 1.0, -1, "Left"); 
+    lab.SetTextShadow( 7,0,0,"#efefef" )
+    lab.SetTextColor( c0 );
     lay.AddChild( lab );
     
     //Create horizontal layout.
@@ -109,7 +110,7 @@ function File( path, layContent )
     btnHelp.SetMargins( 0, 0.01, 0.14, 0 );
     
     //Create image.
-	var img = app.CreateImage( dfltImage, 0.2, -1 );
+	var img = app.CreateImage( dfltImage, 0.42, -1 );
 	img.imageFile = dfltImage;
 	layHoriz.AddChild( img );
 	
@@ -122,9 +123,10 @@ function File( path, layContent )
     layHoriz.AddChild( btnImage );
     
     //Create 'Notes' label.
-    var lab = app.CreateText( "Notes" ); 
+    var lab = app.CreateText( "Notes:", 1.0, -1, "Left"); 
+    lab.SetTextShadow( 7,0,0,"#efefef"); 
     lab.SetMargins( 0, 0.04, 0, 0 );
-    lab.SetTextColor( "#4285F4" );
+    lab.SetTextColor( c0 );
     lay.AddChild( lab );
     
     //Create help button.
@@ -134,7 +136,7 @@ function File( path, layContent )
     btnHelp.SetMargins( 0, 0, 0.01, 0 );
     
     //Create notes edit control.
-    var txtNotes = app.CreateTextEdit( "", 0.7 );
+    var txtNotes = app.CreateTextEdit( "", 0.807 );
     txtNotes.SetOnChange( function(){btnSave.SetEnabled(true)} );
     layHoriz.AddChild( txtNotes );
 

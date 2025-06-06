@@ -36,7 +36,7 @@ this.Tween2 = function()
 
 this.RunAnim = function(){
 //	img.Animate( anim[utils.RandomIntegerRange(0, anim.length)] );
-	img.SetImage( "Img/" + utils.RandomIntegerRange(1, 10) + ".png" );
+	img.SetImage("Img/Ibeb.png");// "Img/" + utils.RandomIntegerRange(1, 10) + ".png" );
 	//self.Tween1();
 }
     //Create layout for app controls.
